@@ -1,4 +1,4 @@
-# Dashboard
+# LotsOfGroups
 
 Owncloud 7 app + theme that  ease managing great number of groups.
 
