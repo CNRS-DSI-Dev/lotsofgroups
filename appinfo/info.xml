@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<info>
+    <id>lotsofgroups</id>
+    <name>Lots of groups</name>
+    <description>Display autocomplete input instead of complete list of groups in lft column of users settings (admin) page.</description>
+    <version>1.0</version>
+    <licence>AGPL</licence>
+    <author>Patrick Paysant / CNRS</author>
+    <require>7</require>
+</info>
