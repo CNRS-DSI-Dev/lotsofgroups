@@ -31,7 +31,7 @@
 		</form>
 	</li>
 	<!-- Everyone -->
-	<li id="everyonegroup" data-gid="_everyone" data-usercount="" class="isgroup">
+	<li id="everyonegroup" data-gid="_everyone" data-usercount="" class="isgroup" ng-click="showGroup('_everyone')">
 		<a href="#">
 			<span class="groupname">
 				<?php p($l->t('Everyone')); ?>
@@ -46,7 +46,7 @@
 
 	<!-- The Admin Group -->
 	<?php foreach($_["adminGroup"] as $adminGroup): ?>
-		<li data-gid="admin" data-usercount="<?php if($adminGroup['usercount'] > 0) { p($adminGroup['usercount']); } ?>" class="isgroup">
+		<li data-gid="admin" data-usercount="<?php if($adminGroup['usercount'] > 0) { p($adminGroup['usercount']); } ?>" class="isgroup" ng-click="showGroup('admin')">
 			<a href="#"><span class="groupname"><?php p($l->t('Admins')); ?></span></a>
 			<span class="utils">
 				<span class="usercount"><?php if($adminGroup['usercount'] > 0) { p($adminGroup['usercount']); } ?></span>
@@ -57,23 +57,10 @@
 	<li><angucomplete-alt id="groups"
               placeholder="Search group"
               pause="400"
-              selected-object="showGroup"
+              selected-object="showSearchGroup"
               remote-url="{{ lotsofgroupsGroupsUrl }}"
               remote-url-data-field="groups"
               minlength = "1"
               title-field="name" /></li>
-
-	<!--List of Groups-->
-	<li data-gid="{{ selectedGroup.originalObject.name }}" data-usercount="{{ selectedGroup.originalObject.usercount }}" class="isgroup" ng-click="showGroup(selectedGroup.originalObject.name)">
-		<a href="#" class="dorename">
-			<span class="groupname">{{ selectedGroup.originalObject.name }}</span>
-		</a>
-		<span class="utils">
-			<span class="usercount" ng-show="selectedGroup.originalObject.usercount > 0">{{ selectedGroup.originalObject.usercount }}</span>
-			<a href="#" class="action delete" original-title="<?php p($l->t('Delete'))?>">
-				<img src="<?php print_unescaped(image_path('core', 'actions/delete.svg')) ?>" class="svg" />
-			</a>
-		</span>
-	</li>
 
 </ul>

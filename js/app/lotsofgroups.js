@@ -14,6 +14,13 @@ lotsfofgroups.controller('groupsController', ['$scope', 'groupsService', functio
 
     $scope.showGroup = function(item) {
         if (item) {
+            GroupList.showGroup(item);
+            $('#groups_value').val('');
+        }
+    }
+
+    $scope.showSearchGroup = function(item) {
+        if (item) {
             GroupList.showGroup(item.originalObject.name);
         }
     }
