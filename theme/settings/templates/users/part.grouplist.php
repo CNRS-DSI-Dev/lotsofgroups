@@ -54,13 +54,22 @@
 		</li>
 	<?php endforeach; ?>
 
-	<li><angucomplete-alt id="groups"
-              placeholder="Search group"
-              pause="400"
-              selected-object="showSearchGroup"
-              remote-url="{{ lotsofgroupsGroupsUrl }}"
-              remote-url-data-field="groups"
-              minlength = "1"
-              title-field="name" /></li>
+	<li id="searchGroup">
+		<angucomplete-alt id="groups"
+			placeholder="Search group"
+			pause="400"
+			selected-object="showSearchGroup"
+			remote-url="{{ lotsofgroupsGroupsUrl }}"
+			remote-url-data-field="groups"
+			minlength = "1"
+			title-field="name" ></angucomplete-alt>
+
+		<span class="utils">
+			<a href="#" class="action delete" original-title="<?php p($l->t('Delete'))?>" ng-click="deleteGroup()">
+				<img src="<?php print_unescaped(image_path('core', 'actions/delete.svg')) ?>" class="svg" />
+			</a>
+		</span>
+
+	</li>
 
 </ul>

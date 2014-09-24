@@ -22,6 +22,14 @@ lotsfofgroups.controller('groupsController', ['$scope', function($scope) {
     $scope.showSearchGroup = function(item) {
         if (item) {
             GroupList.showGroup(item.originalObject.name);
+            $('#searchGroup').addClass('active');
+        }
+    }
+
+    $scope.deleteGroup = function() {
+        var item = $('groups_value').val();
+        if (item) {
+            GroupDeleteHandler.mark(item);
         }
     }
 
