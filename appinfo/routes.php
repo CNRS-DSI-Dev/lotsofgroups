@@ -16,11 +16,6 @@ $application = new LotsOfGroups();
 $application->registerRoutes($this, array(
     'routes' => array(
         array(
-            'name' => 'api_groups#users',
-            'url' => '/api/1.0/users',
-            'verb' => 'GET',
-        ),
-        array(
             'name' => 'api_groups#groups',
             'url' => '/api/1.0/groups/{search}',
             'default' => array('search' => ''),

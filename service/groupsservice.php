@@ -13,30 +13,9 @@ namespace OCA\LotsOfGroups\Service;
 class GroupsService {
 
     protected $userManager;
-    protected $datas;
 
-    public function __construct($userManager) {
+    public function __construct() {
         $this->userManager = $userManager;
-
-        $this->datas = array();
-    }
-
-    public function countUsers() {
-        if (!isset($this->datas['nbUsers'])) {
-            $nbUsers = 0;
-
-            $nbUsersByBackend = $this->userManager->countUsers();
-
-            if (!empty($nbUsersByBackend) and is_array($nbUsersByBackend)) {
-                foreach($nbUsersByBackend as $backend => $count) {
-                    $nbUsers += $count;
-                }
-            }
-
-            $this->datas['nbUsers'] = $nbUsers;
-        }
-
-        return $this->datas['nbUsers'];
     }
 
     public function groups($search='') {

@@ -29,23 +29,7 @@ class APIGroupsController extends APIController {
     }
 
     /**
-     * Returns nb of users
-     * @NoCSRFRequired
-     * @CORS
-     */
-    public function users() {
-        try {
-            $nbUsers = $this->groupsService->countUsers();
-        } catch (Exception $e) {
-            $response = new JSONResponse();
-            return $response->setStatus(\OCA\AppFramework\Http::STATUS_NOT_FOUND);
-        }
-
-        return new JSONResponse($nbUsers);
-    }
-
-    /**
-     * Return list of groups (15 first)
+     * Return list of groups
      * @NoCSRFRequired
      * @CORS
      */
