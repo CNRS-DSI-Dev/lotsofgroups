@@ -21,15 +21,19 @@ You will need to copy, merge (or use symbolic links) this app's theme part with 
 The final directory tree must be as the one below :
 
 ```
-.
-├── [my-theme]
-│   └── settings
-│       └── templates
-│           ├── settings.php
-│           └── users
-│               ├── main.php
-│               ├── part.createuser.php
-│               ├── part.grouplist.php   <-- this is provided with lotsofgroups app
-│               ├── part.setquota.php
-│               └── part.userlist.php
+[owncloud]
+├── themes
+│   └── [my-theme]
+│       └── settings
+│           ├── js
+│           │   └── users
+│           │       └── groups.js            <-- this is provided by lotsofgroups app
+│           └── templates
+│               ├── settings.php
+│               └── users
+│                   ├── main.php
+│                   ├── part.createuser.php
+│                   ├── part.grouplist.php   <-- this is provided by lotsofgroups app
+│                   ├── part.setquota.php
+│                   └── part.userlist.php
 ```
