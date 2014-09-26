@@ -27,7 +27,7 @@ lotsfofgroups.controller('groupsController', ['$scope', function($scope) {
     }
 
     $scope.deleteGroup = function() {
-        var item = $('groups_value').val();
+        var item = $('#groups_value').val();
         if (item) {
             GroupDeleteHandler.mark(item);
         }
