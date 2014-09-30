@@ -38,6 +38,8 @@ The final directory tree must be as the one below :
 │                   └── part.userlist.php
 ```
 
+The settings.php, main.php, part.createuser.php, part.setquota.php and part.userlist.php in your theme must be copied or "symbolic linked" from core ownCloud core (find them in [owncloud]/settings/templates directory).
+
 ## License and authors
 
 |                      |                                          |
