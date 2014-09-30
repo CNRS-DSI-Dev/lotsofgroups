@@ -37,3 +37,11 @@ The final directory tree must be as the one below :
 │                   ├── part.setquota.php
 │                   └── part.userlist.php
 ```
+
+## License and authors
+
+|                      |                                          |
+|:---------------------|:-----------------------------------------|
+| **Author:**          | Patrick Paysant (<ppaysant@linagora.com>)
+| **Copyright:**       | Copyright (c) 2014 CNRS DSI
+| **License:**         | AGPL v3, see the COPYING file.
