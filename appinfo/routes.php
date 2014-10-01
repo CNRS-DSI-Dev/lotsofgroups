@@ -21,5 +21,10 @@ $application->registerRoutes($this, array(
             'default' => array('search' => ''),
             'verb' => 'GET',
         ),
+        array(
+            'name' => 'settings#filter',
+            'url' => '/settings/filter',
+            'verb' => 'POST',
+        ),
     ),
 ));

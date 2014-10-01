@@ -15,13 +15,17 @@ use \OCP\AppFramework\Http\JSONResponse;
 use \OCP\IRequest;
 use \OCP\IConfig;
 
-class APIGroupsController extends APIController {
+use \OCA\LotsOfGroups\lib\Helper;
+
+class APIGroupsController extends APIController
+{
 
     protected $settings;
     protected $userId;
     protected $groupsService;
 
-    public function __construct($appName, IRequest $request, IConfig $settings, $userId, $groupsService){
+    public function __construct($appName, IRequest $request, IConfig $settings, $userId, $groupsService)
+    {
         parent::__construct($appName, $request, 'GET');
         $this->settings = $settings;
         $this->userId = $userId;
@@ -33,11 +37,12 @@ class APIGroupsController extends APIController {
      * @NoCSRFRequired
      * @CORS
      */
-    public function groups($search='') {
+    public function groups($search='')
+    {
         $groups = array();
 
         try {
-            $groups = $this->groupsService->groups($search);
+            $groups = $this->groupsService->groups($search, Helper::getLotsOfGroupsFilter());
         } catch (Exception $e) {
             $response = new JSONResponse();
             return $response->setStatus(\OCA\AppFramework\Http::STATUS_NOT_FOUND);

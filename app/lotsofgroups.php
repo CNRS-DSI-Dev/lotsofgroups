@@ -11,18 +11,31 @@
 namespace OCA\LotsOfGroups\App;
 
 use \OCP\AppFramework\App;
+use \OCA\LotsOfGroups\Controller\SettingsController;
 use \OCA\LotsOfGroups\Controller\APIGroupsController;
 use \OCA\LotsOfGroups\Service\GroupsService;
 
-class LotsOfGroups extends App {
-
+class LotsOfGroups extends App
+{
     /**
      * Define your dependencies in here
      */
-    public function __construct(array $urlParams=array()){
+    public function __construct(array $urlParams=array())
+    {
         parent::__construct('lotsofgroups', $urlParams);
 
         $container = $this->getContainer();
+
+        /**
+         * Controllers
+         */
+        $container->registerService('SettingsController', function($c) {
+            return new SettingsController(
+                $c->query('AppName'),
+                $c->query('Request'),
+                $c->query('L10N')
+            );
+        });
 
         $container->registerService('ApiGroupsController', function($c){
             return new APIGroupsController(
@@ -34,6 +47,9 @@ class LotsOfGroups extends App {
             );
         });
 
+        /**
+         * Services
+         */
         $container->registerService('GroupsService', function($c){
             return new GroupsService(
                 $c->query('UserManager')
@@ -54,8 +70,9 @@ class LotsOfGroups extends App {
         $container->registerService('CoreConfig', function($c) {
             return $c->query('ServerContainer')->getConfig();
         });
+        $container->registerService('L10N', function($c) {
+            return $c->query('ServerContainer')->getL10N($c->query('AppName'));
+        });
 
     }
-
-
 }
