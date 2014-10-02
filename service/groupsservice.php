@@ -38,7 +38,7 @@ class GroupsService
 
         if (!empty($filter)) {
             foreach($groups as $key => $group) {
-                if (strpos($group, $filter) !== false) {
+                if (strpos($group['id'], $filter) !== false) {
                     unset($groups[$key]);
                 }
             }

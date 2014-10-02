@@ -17,7 +17,6 @@ use OCA\LotsOfGroups\App\LotsOfGroups;
 $app = new LotsOfGroups;
 $c = $app->getContainer();
 
-// \OCP\Util::addScript('lotsofgroups', 'settings-admin');
 $c->query('API')->addScript('settings-admin');
 
 $tmpl = new \OCP\Template($c->query('AppName'), 'settings-admin');
