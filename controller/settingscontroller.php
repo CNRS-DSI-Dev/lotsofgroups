@@ -40,24 +40,18 @@ Class SettingsController extends Controller
         try {
             Helper::setLotsOfGroupsFilter($lotsofgroups_filter);
 
-            $msg = $this->trans->t('Saved');
-
-            // \OC_JSON::success(array("data" => array( "message" => $this->l->t("Saved") )));
-            // exit();
             return new JSONResponse(array(
                 'status' => 'success',
                 'data' => array(
-                    'message' => $msg,
+                    'message' => (string) $this->trans->t('Saved'),
                 ),
             ));
         }
         catch(Exception $e) {
-            // \OC_JSON::error(array("data" => array( "message" => $this->l->t("Error") )));
-            // exit();
             return new JSONResponse(array(
                 'status' => 'error',
                 'data' => array(
-                    'message' => 'Error',
+                    'message' => (string) $this->trans->t('Error'),
                 ),
             ));
         }
