@@ -7,7 +7,7 @@
  */
 
 $(document).ready(function() {
-    if (!OC.appswebroots.lotsofgroups2) {
+    if (!OC.appswebroots.lotsofgroups) {
         var msg = '"LotsOfGroup" must be installed / enabled with this theme';
         if (OC.theme.name) {
             msg =  msg + ' (' + OC.theme.name + ')';
