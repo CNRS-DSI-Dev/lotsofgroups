@@ -48,7 +48,7 @@
 
 	<li id="searchGroup">
 		<angucomplete-alt id="groups"
-			placeholder="<?php p($l->t('Search group'))?>"
+			placeholder="{{ searchPlaceholder }}"
 			pause="400"
 			selected-object="showSearchGroup"
 			remote-url="{{ lotsofgroupsGroupsUrl }}"

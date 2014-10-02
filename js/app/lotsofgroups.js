@@ -21,6 +21,7 @@ if (OC.appswebroots.lotsofgroups) {
 
     lotsfofgroups.controller('groupsController', ['$scope', function($scope) {
         $scope.lotsofgroupsGroupsUrl = OC.generateUrl('/apps/lotsofgroups/api/1.0/groups/');
+        $scope.searchPlaceholder = t('lotsofgroups', 'Search group');
 
         $scope.showGroup = function(item) {
             if (item) {
