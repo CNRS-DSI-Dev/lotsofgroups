@@ -229,11 +229,11 @@ GroupList = {
 		GroupDeleteHandler.setNotification(OC.Notification, 'deletegroup', msg,
 			GroupList.show);
 
-		//when to mark user for delete
-		$userGroupList.on('click', '.delete', function () {
-			// Call function for handling delete/undo
-			GroupDeleteHandler.mark(GroupList.getElementGID(this));
-		});
+		// //when to mark user for delete
+		// $userGroupList.on('click', '.delete', function () {
+		// 	// Call function for handling delete/undo
+		// 	GroupDeleteHandler.mark(GroupList.getElementGID(this));
+		// });
 
 		//delete a marked user when leaving the page
 		$(window).on('beforeunload', function () {
