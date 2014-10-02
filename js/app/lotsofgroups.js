@@ -40,7 +40,17 @@ if (OC.appswebroots.lotsofgroups) {
         $scope.deleteGroup = function() {
             var item = $('#groups_value').val();
             if (item) {
-                GroupDeleteHandler.mark(item);
+                OC.dialogs.confirm(
+                    'Confirm suppression of "' + item + '" group ?',
+                    'Group suppression',
+                    function(okToSuppress) {
+                        if (okToSuppress) {
+                            return GroupDeleteHandler.mark(item);
+                        }
+                    },
+                    true
+                );
+
             }
         }
 
