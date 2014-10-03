@@ -13,17 +13,18 @@ GroupList = {
 	everyoneGID: '_everyone',
 
 	addGroup: function (gid, usercount) {
-		// var $li = $userGroupList.find('.isgroup:last-child').clone();
-		// $li
-		// 	.data('gid', gid)
-		// 	.find('.groupname').text(gid);
-		// GroupList.setUserCount($li, usercount);
+		console.log('addGroup ' + gid)
+		var $li = $userGroupList.find('.isgroup:last-child').clone();
+		$li
+			.data('gid', gid)
+			.find('.groupname').text(gid);
+		GroupList.setUserCount($li, usercount);
 
-		// $li.appendTo($userGroupList);
+		$li.appendTo($userGroupList);
 
 		// GroupList.sortGroups();
 
-		// return $li;
+		return $li;
 	},
 
 	setUserCount: function (groupLiElement, usercount) {
@@ -119,6 +120,11 @@ GroupList = {
 				filterGroups: filter.filterGroups ? 1 : 0
 			},
 			function (result) {
+
+				// mega hack
+				// console.log($('li.creator input.new').html());
+				// $('#usergrouplist').scope().groups.push({"id":"nomdugroupe","name":"nomdugroupe","usercount":1});
+				// $('#usergrouplist').scope().$apply();
 
 				// var lis = [];
 				// if (result.status === 'success') {

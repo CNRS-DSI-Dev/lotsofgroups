@@ -5,8 +5,9 @@
 
 \OCP\Util::addScript('lotsofgroups', 'lib/angular');
 \OCP\Util::addScript('lotsofgroups', 'lib/angucomplete-alt');
-\OCP\Util::addScript('lotsofgroups', 'app/lotsofgroups');
 
+\OCP\Util::addScript('lotsofgroups', 'service/lotsofgroups.service');
+\OCP\Util::addScript('lotsofgroups', 'app/lotsofgroups');
 ?>
 
 <ul id="usergrouplist" ng-app="lotsofgroups" ng-controller="groupsController">
@@ -46,7 +47,18 @@
 		</li>
 	<?php endforeach; ?>
 
-	<li id="searchGroup">
+	<li data-gid="{{ group.name }}" data-usercount="{{ group.usercount }}" class="isgroup" ng-show="completeList" ng-repeat="group in groups" ng-cloak>
+		<a href="#" class="dorename" ng-click="showGroup(group.id)">
+			<span class="groupname">{{ group.name }}</span>
+		</a>
+		<span class="utils">
+			<span class="usercount" ng-show="group.usercount > 0">{{ $group.usercount }}</span>
+			<a href="#" class="action delete" original-title="<?php p($l->t('Delete'))?>" ng-click="deleteGroup(group.id)">
+				<img src="<?php print_unescaped(image_path('core', 'actions/delete.svg')) ?>" class="svg" />
+			</a>
+		</span>
+	</li>
+	<li id="searchGroup" ng-show="!completeList" ng-cloak>
 		<angucomplete-alt id="groups"
 			placeholder="{{ searchPlaceholder }}"
 			pause="400"
