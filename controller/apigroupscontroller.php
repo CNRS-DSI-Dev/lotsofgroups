@@ -34,12 +34,15 @@ class APIGroupsController extends APIController
 
     /**
      * Return list of groups
+     * @NoAdminRequired
      * @NoCSRFRequired
      * @CORS
      */
     public function groups($search='')
     {
         $groups = array();
+
+        \OC_JSON::checkSubAdminUser();
 
         try {
             $groups = $this->groupsService->groups($search, Helper::getLotsOfGroupsFilter());

@@ -56,11 +56,13 @@
 			minlength = "1"
 			title-field="name" ></angucomplete-alt>
 
+		<?php if (\OC_SubAdmin::isSubAdmin(\OCP\User::getUser())) { ?>
 		<span class="utils">
 			<a href="#" class="action delete" original-title="<?php p($l->t('Delete'))?>" ng-click="deleteGroup()">
 				<img src="<?php print_unescaped(image_path('core', 'actions/delete.svg')) ?>" class="svg" />
 			</a>
 		</span>
+		<?php } ?>
 
 	</li>
 

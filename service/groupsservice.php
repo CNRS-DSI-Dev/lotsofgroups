@@ -30,7 +30,7 @@ class GroupsService
     {
         $groupManager = \OC_Group::getManager();
 
-        $isAdmin = \OC_User::isAdminUser(\OC_User::getUser());
+        $isAdmin = \OC_User::isAdminUser(\OCP\User::getUser());
 
         $groupsInfo = new \OC\Group\MetaData(\OC_User::getUser(), $isAdmin, $groupManager);
         $groupsInfo->setSorting($groupsInfo::SORT_USERCOUNT);
