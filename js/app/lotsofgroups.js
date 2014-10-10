@@ -45,6 +45,7 @@ if (OC.appswebroots.lotsofgroups) {
                     'Group suppression',
                     function(okToSuppress) {
                         if (okToSuppress) {
+                            $scope.showGroup('_everyone');
                             return GroupDeleteHandler.mark(item);
                         }
                     },
