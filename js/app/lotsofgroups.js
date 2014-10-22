@@ -41,8 +41,8 @@ if (OC.appswebroots.lotsofgroups) {
             var item = $('#groups_value').val();
             if (item) {
                 OC.dialogs.confirm(
-                    'Confirm suppression of "' + item + '" group ?',
-                    'Group suppression',
+                    t('lotsofgroups', 'Confirm suppression of {groupname} group ?', {groupname: item}),
+                    t('lotsofgroups', 'Group suppression'),
                     function(okToSuppress) {
                         if (okToSuppress) {
                             $scope.showGroup('_everyone');

@@ -6,4 +6,6 @@ $TRANSLATIONS = array(
 'Enter a filter' => 'Saisir le filtre',
 "All groups containing this filter string will be hidden." => 'Tous les groupes dont le nom contient cette chaîne de caractères seront cachés.',
 "Saved" => "Enregistré",
+"Confirm suppression of {groupname} group ?" => "Confirmez vous la suppression du groupe {groupname} ?",
+"Group suppression" => "Suppression d'un groupe",
 );
