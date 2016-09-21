@@ -15,7 +15,7 @@ class GroupsService
 
     protected $userManager;
 
-    public function __construct($userManager)
+    public function __construct(\OCP\IUserManager $userManager)
     {
         $this->userManager = $userManager;
     }

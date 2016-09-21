@@ -10,21 +10,21 @@
 
 namespace OCA\LotsOfGroups\Controller;
 
-use \OCP\AppFramework\APIController;
+use \OCP\AppFramework\ApiController;
 use \OCP\AppFramework\Http\JSONResponse;
 use \OCP\IRequest;
 use \OCP\IConfig;
 
 use \OCA\LotsOfGroups\lib\Helper;
 
-class APIGroupsController extends APIController
+class APIGroupsController extends ApiController
 {
 
     protected $settings;
     protected $userId;
     protected $groupsService;
 
-    public function __construct($appName, IRequest $request, IConfig $settings, $userId, $groupsService)
+    public function __construct($appName, IRequest $request, IConfig $settings, $userId, \OCA\LotsOfGroups\Service\GroupsService $groupsService)
     {
         parent::__construct($appName, $request, 'GET');
         $this->settings = $settings;
@@ -36,7 +36,6 @@ class APIGroupsController extends APIController
      * Return list of groups
      * @NoAdminRequired
      * @NoCSRFRequired
-     * @CORS
      */
     public function groups($search='')
     {

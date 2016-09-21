@@ -37,7 +37,7 @@ class LotsOfGroups extends App
             );
         });
 
-        $container->registerService('ApiGroupsController', function($c){
+        $container->registerService('APIGroupsController', function($c){
             return new APIGroupsController(
                 $c->query('AppName'),
                 $c->query('Request'),

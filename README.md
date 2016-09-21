@@ -1,6 +1,6 @@
 # LotsOfGroups
 
-Owncloud 7 app + theme that  ease managing great number of groups.
+Owncloud 9 app + theme that  ease managing great number of groups.
 
 If you have lots of groups to manage, the "user page" may be difficult to use. This app replaces the long list of groups by an unique autocompleted text input.
 

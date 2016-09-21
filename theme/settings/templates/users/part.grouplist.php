@@ -9,7 +9,7 @@
 
 ?>
 
-<ul id="usergrouplist" ng-app="lotsofgroups" ng-controller="groupsController">
+<ul id="usergrouplist" ng-app="lotsofgroups" ng-controller="groupsController" data-sort-groups="<?php p($_['sortGroups']); ?>">
 	<!-- Add new group -->
 	<li id="newgroup-init">
 		<a href="#">
@@ -19,7 +19,7 @@
 	<li id="newgroup-form" style="display: none">
 		<form>
 			<input type="text" id="newgroupname" placeholder="<?php p($l->t('Group')); ?>..." />
-			<input type="submit" class="button icon-add svg" value="" />
+			<input type="submit" class="button icon-add" value="" />
 		</form>
 	</li>
 	<!-- Everyone -->
