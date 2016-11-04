@@ -52,7 +52,8 @@ class LotsOfGroups extends App
          */
         $container->registerService('GroupsService', function($c){
             return new GroupsService(
-                $c->query('UserManager')
+                $c->query('UserManager'),
+                $c->query('UserSession')
             );
         });
 
@@ -61,6 +62,10 @@ class LotsOfGroups extends App
          */
         $container->registerService('UserManager', function($c) {
             return $c->query('ServerContainer')->getUserManager();
+        });
+
+        $container->registerService('UserSession', function($c) {
+            return $c->query('ServerContainer')->getUserSession();
         });
 
         $container->registerService('UserId', function($c) {
