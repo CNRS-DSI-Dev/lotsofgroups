@@ -30,7 +30,7 @@ class GroupsService
      */
     public function groups($search='', $filter='')
     {
-        $groupManager = \OC_Group::getManager();
+        $groupManager = \OC::$server->getGroupManager();
 
         $isAdmin = \OC_User::isAdminUser(\OCP\User::getUser());
 
